@@ -92,6 +92,13 @@ public class CakeStacker : MonoBehaviour
                }
                
                
+               
+          }
+
+          if (other.tag == "Obstacle")
+          {
+               GameLoseCanvas.SetActive(true);
+               Time.timeScale = 0;
           }
      }
 }

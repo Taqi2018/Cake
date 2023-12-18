@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 7087060664768891796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7572787, y: 0.9237454, z: -1.74}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8155070902735050936}
@@ -119,8 +119,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: NailStamp
       objectReference: {fileID: 0}
+    - target: {fileID: 6586980518584758454, guid: 57938544e8f4c06468cedd06afd68749,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57938544e8f4c06468cedd06afd68749, type: 3}
+--- !u!1 &4121897301411202799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6586980518584758454, guid: 57938544e8f4c06468cedd06afd68749,
+    type: 3}
+  m_PrefabInstance: {fileID: 7087060664545982041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &770226811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121897301411202799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4219514, y: 1.2295632, z: 0.6528747}
+  m_Center: {x: 0.63605756, y: -0.0008315742, z: 0.00002026558}
 --- !u!4 &8155070902735050936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1402569912249855713, guid: 57938544e8f4c06468cedd06afd68749,

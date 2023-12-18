@@ -39,6 +39,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5029332491110485729}
     m_Modifications:
+    - target: {fileID: 673146372795955246, guid: 03c771d2e31e7c240a96b14b1d3ff7fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 6327705491955180895, guid: 03c771d2e31e7c240a96b14b1d3ff7fa,
         type: 3}
       propertyPath: m_Name
@@ -127,3 +132,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5029332492455363037}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5520489888907639283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 673146372795955246, guid: 03c771d2e31e7c240a96b14b1d3ff7fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5029332492455363037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &737119565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520489888907639283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5461209, y: 1.6922215, z: 0.42490175}
+  m_Center: {x: 0.000000044703484, y: -0.9143211, z: -0.000677526}
