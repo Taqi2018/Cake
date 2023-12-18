@@ -11,6 +11,8 @@ TagManager:
   - PinkFluid
   - Cream
   - Package
+  - Ground
+  - End
   layers:
   - Default
   - TransparentFX
