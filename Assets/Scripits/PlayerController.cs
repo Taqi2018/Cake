@@ -1,75 +1,84 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    float x_position;
-    public float maxSpeed = 10f; // Set your desired maximum speed here
 
-    public float targetX,newX;
-    private bool isPlayerTouching;
+
+    public float speed;
+
+   
+    public  bool isPlayerTouching;
     
 
 
-
     // Start is called before the first frame update
+    public static PlayerController instance;
+    private Vector2 startPos;
+    public bool isPlayerMoving;
+
     void Start()
     {
-        x_position = 0;
-        PlayerInput.OnPlayerTouchScreen += OnEventPlayerTouch;
-        PlayerInput.OnPlayerNotTouchScreen += OnEventPlayerNotTouch;
-        
-        
+        instance = this;
 
-        
+        PlayerInput.OnPlayerTouchEnter += OnEventPlayerTouch;
+        PlayerInput.OnPlayerTouchExit += OnEventPlayerNotTouch;
+
+
     }
 
-    private void OnEventPlayerNotTouch(object sender, EventArgs e)
+    private void OnEventPlayerNotTouch(object sender, PlayerInput.OnPlayerTouchEventArgs e)
     {
         isPlayerTouching = false;
-
+        isPlayerMoving = false;
     }
 
-    private void OnEventPlayerTouch(object sender, EventArgs e)
+    private void OnEventPlayerTouch(object sender, PlayerInput.OnPlayerTouchEventArgs e)
     {
         isPlayerTouching = true;
+
+        startPos= e.position;
+        
+
     }
 
-    // Update is called once per frame
 
-    void Update()
+
+    private void FixedUpdate()
     {
+
         if (isPlayerTouching)
         {
-            Vector3 mousePosition = PlayerInput.instance.newInput.Move.Position.ReadValue<Vector2>();
-            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hitInfo))
+            Vector2 newPos =PlayerInput.instance.newInput.Move.Position.ReadValue<Vector2>();
+            float xPos = newPos.x - startPos.x;
+            if (newPos.x - startPos.x != 0)
             {
-                targetX = hitInfo.point.x;
-                float currentX = transform.position.x;
-
-                // Smoothly move towards the target position
-                newX = Mathf.MoveTowards(currentX, targetX, speed * Time.deltaTime);
-                transform.position = new Vector3(newX
-                    
-                    
-                    
-                    
-                    
-       , transform.position.y, transform.position.z);
+                isPlayerMoving=true;
+           
             }
-
-            // Update the ball speed
-            speed = Mathf.Clamp(speed, 0f, maxSpeed);
-
-       
+            transform.position += new Vector3(-xPos / 500 * Time.deltaTime, 0, -(speed * Time.deltaTime));
         }
-        // Move the ball in the z-axis with the limited speed
-        transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
+
     }
 
+
+
+    // Unsubscribe from events to avoid MissingReferenceException
+    private void OnDestroy()
+    {
+        PlayerInput.OnPlayerTouchEnter -= OnEventPlayerTouch;
+        PlayerInput.OnPlayerTouchExit -= OnEventPlayerNotTouch;
+    }
+
+
+   Vector3 Convert2dTo3dWorld(Vector2 position)
+    {
+        Ray ray =Camera.main.ScreenPointToRay(position);
+        if (Physics.Raycast(ray,out RaycastHit hitInfo)){
+            return hitInfo.point;
+        }
+        return Vector3.zero;
+    }
 }

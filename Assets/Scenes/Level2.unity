@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2652,11 +2652,6 @@ PrefabInstance:
       propertyPath: GameLoseCanvas
       value: 
       objectReference: {fileID: 1462971528}
-    - target: {fileID: 2342872721707486408, guid: f9c33526cff472d4cba72a838f1177fa,
-        type: 3}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 2342872722051381272, guid: f9c33526cff472d4cba72a838f1177fa,
         type: 3}
       propertyPath: m_Name
@@ -2670,7 +2665,7 @@ PrefabInstance:
     - target: {fileID: 2342872722051381277, guid: f9c33526cff472d4cba72a838f1177fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: 0.129
       objectReference: {fileID: 0}
     - target: {fileID: 2342872722051381277, guid: f9c33526cff472d4cba72a838f1177fa,
         type: 3}
@@ -2716,6 +2711,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342872722051381280, guid: f9c33526cff472d4cba72a838f1177fa,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.28956738
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342872722051381280, guid: f9c33526cff472d4cba72a838f1177fa,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.0057916194
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c33526cff472d4cba72a838f1177fa, type: 3}

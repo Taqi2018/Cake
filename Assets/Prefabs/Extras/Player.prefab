@@ -225,7 +225,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 100
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -439,7 +439,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!65 &2342872722051381280
 BoxCollider:
@@ -452,8 +452,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.42784283, y: 0.5991166, z: 0.23953366}
-  m_Center: {x: 0.01164569, y: 0.37427792, z: -0.003252387}
+  m_Size: {x: 0.24318293, y: 0.7407462, z: 0.21359825}
+  m_Center: {x: -0.006311491, y: 0.30346313, z: -0.018485785}
 --- !u!114 &2342872722051381275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,9 +467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxSpeed: 10
-  targetX: 0
-  newX: 0
+  isPlayerTouching: 0
+  isPlayerMoving: 0
 --- !u!114 &2342872722051381281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +679,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2290032844319090840, guid: 7cb9c06a34abe2442944af69ccc9d984,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab0ca7c9ae8d1c548bf2fed94bf8ca22, type: 2}
     - target: {fileID: 919132149155446097, guid: 7cb9c06a34abe2442944af69ccc9d984,
         type: 3}
       propertyPath: m_Name
@@ -720,3 +724,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &76520931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189366031949739558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fefe00c0bf1ef41a455b38813fc276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2342872720771474946}
